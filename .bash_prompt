@@ -1,0 +1,19 @@
+source ~/.git-prompt.sh
+
+light_yellow="\e[38;5;227m"
+light_blue="\e[38;5;105m"
+reset="\e[0m"
+
+# terminal title (set to the current working directory)
+PS1="\[\033]0;\w\007\]"
+
+# Show current directory
+PS1+="${light_yellow}"
+PS1+="\W"
+
+# Show current git branch
+PS1+='$(__git_ps1 " ${light_blue}%s")'
+
+# Suffix
+PS1+="$reset "
+

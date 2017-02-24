@@ -1,0 +1,20 @@
+[user]
+	name = Morten Harnang
+	email = mharnang@gmail.com
+
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = ~/.gitignore
+
+[remote "origin"]
+    prune = true
+
+[alias]
+  branch-name = "!git rev-parse --abbrev-ref HEAD"
+  publish = "!git push origin -u $(git branch-name)"
+  unpublish = "!git push origin :$(git branch-name)"
+  ours = "!f() { git checkout --ours $@ && git add $@; }; f"
+  theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+
+[push]
+	default = matching
