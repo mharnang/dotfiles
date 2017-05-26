@@ -5,9 +5,11 @@
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	excludesfile = ~/.gitignore
+	quotepath = false
+	ignorecase = false
 
 [remote "origin"]
-    prune = true
+  prune = true
 
 [alias]
   branch-name = "!git rev-parse --abbrev-ref HEAD"

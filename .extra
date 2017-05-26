@@ -46,3 +46,7 @@ alias gl='git log --graph --oneline --decorate --all'
 glf() {
   command git log --oneline | grep $1
 }
+
+start = "!f() { git fetch origin && git co -b $@ origin/master; }; f"
+sync = "!git fetch origin && git merge origin/master"
+recent = "!f() { git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'|column -ts'|'; }; f"
