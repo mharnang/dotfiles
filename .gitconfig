@@ -17,7 +17,7 @@
   unpublish = "!git push origin :$(git branch-name)"
   ours = "!f() { git checkout --ours $@ && git add $@; }; f"
   theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
-	start = "!f() { git fetch origin && git co -b $@ origin/master; }; f"
+	start = "!f() { git fetch origin && git checkout -b $@ origin/master; }; f"
 	sync = "!git fetch origin && git merge origin/master"
 	recent = "!f() { git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'|column -ts'|'; }; f"
 
