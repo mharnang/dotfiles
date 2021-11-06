@@ -32,16 +32,18 @@ alias svgf='svgo --config ~/.svgoConfig -f'
 # Git
 alias g='git'
 alias ga='git add'
-alias gp='git pull'
-alias gd='git diff'
-alias gps='git push'
-alias gs='git status --short'
 alias gb='git branch'
+alias gb=$'git for-each-ref --sort=-committerdate refs/heads/ --format=\'%(HEAD) %(color:yellow)%(refname:short)%(color:white) - %(contents:subject) %(color:dim white)%(authorname) %(committerdate:relative)%(color:reset)\''
 alias gc='git commit -v'
 alias gca='git commit -v -a'
+alias gcm='git checkout master && git pull && git-delete-squashed'
 alias gco='git checkout'
-alias gcm='git checkout master'
+alias gd='git diff'
 alias gl='git log --graph --oneline --decorate --all'
+alias gp='git pull --rebase && git-delete-squashed'
+alias gps='git push'
+alias gs='git status --short'
+
 glf() {
   command git log --oneline | grep $1
 }
