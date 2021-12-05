@@ -1,26 +1,43 @@
-# Settings
-
-The install script will:
-
-1. Install zsh and set it as the default shell
-1. Install Homebrew
-1. Install Homebrew packages
-1. Install npm
-1. Install npm packages
-1. Create symlinks to the dotfiles in `~/settings/dotfiles/` in your home directory
-1. Install neovim plugins
-1. Install gui apps with Homebrew Cask
-
 ## Installation
 
-## Manual Settings
+```bash
+git clone https://github.com/mharnang/dotfiles.git && cd dotfiles && source bootstrap.sh
+```
 
-### Manual System Settings
+To update, `cd` into your local `dotfiles` repository and then:
 
-#### System Preferences
+```bash
+source bootstrap.sh
+```
 
-- General
-  - Default web browser: Google Chrome.app
-- Mission Control
-  - [ ] Automatically rearrange Spaces based on most recent use
-  - [x] Displays have separate Spaces
+Alternatively, to update while avoiding the confirmation prompt:
+
+```bash
+set -- -f; source bootstrap.sh
+```
+
+### Git-free install
+
+To install these dotfiles without Git:
+
+```bash
+cd; curl -#L https://github.com/mathiasbynens/dotfiles/tarball/main | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh,.osx,LICENSE-MIT.txt}
+```
+
+To update later on, just run that command again.
+
+### Sensible macOS defaults
+
+When setting up a new Mac, you may want to set some sensible macOS defaults:
+
+```bash
+./.macos
+```
+
+### Install Homebrew formulae
+
+When setting up a new Mac, you may want to install some common [Homebrew](https://brew.sh/) formulae (after installing Homebrew, of course):
+
+```bash
+./brew.sh
+```

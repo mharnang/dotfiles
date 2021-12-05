@@ -1,47 +1,6 @@
-alias ..="cd .."
-alias cd..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-
-alias ls='ls -AFhG'
-
-alias b='brew'
-alias bs='brew search'
-alias bi='brew install'
-alias bci='brew cask install'
-
-# Remove rucursivly
-alias rm='rm -rf'
-
-# Edit hosts file
-alias hosts='sudo vim /etc/hosts'
-
-# Get file size of file or folder
-alias size="du -hs"
-
-# Moves a file to the MacOS trash
-trash () {
-  command mv "$@" ~/.Trash
-}
-
-# Compress svg or folder of svgs with SVGO
-alias svg='svgo --config ~/.svgoConfig -i'
-alias svgf='svgo --config ~/.svgoConfig -f'
-
-# Git
-alias g='git'
-alias ga='git add'
-alias gp='git pull'
-alias gd='git diff'
-alias gps='git push'
-alias gs='git status --short'
-alias gb='git branch'
-alias gc='git commit -v'
-alias gca='git commit -v -a'
-alias gco='git checkout'
-alias gcm='git checkout master'
-alias gl='git log --graph --oneline --decorate --all'
-glf() {
-  command git log --oneline | grep $1
-}
+GIT_AUTHOR_NAME="Morten Harnang"
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+git config --global user.name "$GIT_AUTHOR_NAME"
+GIT_AUTHOR_EMAIL="4163438+mharnang@users.noreply.github.com"
+GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+git config --global user.email "$GIT_AUTHOR_EMAIL"
