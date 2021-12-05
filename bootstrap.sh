@@ -11,15 +11,15 @@ function doIt() {
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
 		-avh --no-perms . ~;
-	source ~/.bash_profile;
+	source ~/.zshrc;
 }
 
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
+if [ "$*" = "--force" ] || [ "$*" = "-f" ]; then
 	doIt;
 else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
+	read "$continue?This may overwrite existing files in your home directory. Are you sure? (y/n)";
 	echo "";
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
+	if [[ "$continue" =~ ^[Yy]$ ]]; then
 		doIt;
 	fi;
 fi;
