@@ -18,9 +18,9 @@ function doIt() {
 if [ "$*" = "--force" ] || [ "$*" = "-f" ]; then
 	doIt;
 else
-	read "$continue?This may overwrite existing files in your home directory. Are you sure? (y/n)";
+	read "$APPROVE?This may overwrite existing files in your home directory. Are you sure? (y/n) ";
 	echo "";
-	if [[ "$continue" =~ ^[Yy]$ ]]; then
+	if [[ "$APPROVE" =~ ^[Yy]$ ]]; then
 		doIt;
 	fi;
 fi;
