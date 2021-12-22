@@ -19,8 +19,8 @@ setopt PROMPT_SUBST
 source ~/.git-prompt.sh
 autoload -U colors && colors
 
-PROMPT='%{$fg[yellow]%}%1d' # current directory
-PROMPT+='%{$fg[blue]%}$(__git_ps1 " %s")' # current git branch
+PROMPT='%{$fg[yellow]%}%1d'               # Current directory
+PROMPT+='%{$fg[magenta]%}$(__git_ps1 " %s")' # Current git branch
 PROMPT+="%{$reset_color%} ▸ "
 
 # Key bindings
